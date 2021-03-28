@@ -1,0 +1,8 @@
+parameters:
+    level: 0
+    tmpDir: .phpstan.cache
+    ignoreErrors:
+        - "#^Class [a-zA-Z0-9\\_\\\\]+ is neither abstract nor final\\.$#"
+    paths:
+        - src
+        - tests
