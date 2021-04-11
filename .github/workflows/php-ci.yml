@@ -1,4 +1,4 @@
-name: ci
+name: php-ci
 
 on:
   push:
@@ -92,11 +92,3 @@ jobs:
       -
         name: Validate composer.json
         run: composer validate
-
-      # Symfony specific
-      -
-        name: About symfony
-        run: ./bin/console about --ansi
-      -
-        name: Check recipes
-        run: composer recipes
