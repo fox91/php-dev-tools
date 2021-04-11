@@ -1,0 +1,102 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - 'v*'
+  pull_request:
+
+env:
+  COMPOSER_FLAGS: "--ansi --no-interaction --no-progress --prefer-dist"
+  COMPOSER_UPDATE_FLAGS: ""
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  tests:
+    name: "Symfony (PHP ${{ matrix.php-version }}, ${{ matrix.dependencies }}, exp: ${{ matrix.experimental }})"
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      matrix:
+        php-version:
+          - "7.3"
+          - "7.4"
+        dependencies: [locked]
+        os: [ubuntu-latest]
+        experimental: [false]
+        include:
+          - php-version: "7.4"
+            dependencies: lowest
+            os: ubuntu-latest
+            experimental: false
+          - php-version: "7.4"
+            dependencies: highest
+            os: ubuntu-latest
+            experimental: false
+          - php-version: "8.0"
+            dependencies: lowest-ignore
+            os: ubuntu-latest
+            experimental: true
+          - php-version: "8.0"
+            dependencies: highest-ignore
+            os: ubuntu-latest
+            experimental: true
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2.3.4
+      -
+        name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@2.10.0
+        with:
+          coverage: none
+          extensions: ctype, filter, iconv, json, pdo, tokenizer, xml
+          ini-values: memory_limit=-1
+          php-version: ${{ matrix.php-version }}
+          tools: composer
+      -
+        name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      -
+        name: Cache composer dependencies
+        uses: actions/cache@v2.1.4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+      -
+        name: Handle lowest dependencies update
+        if: "contains(matrix.dependencies, 'lowest')"
+        run: echo "COMPOSER_UPDATE_FLAGS=$COMPOSER_UPDATE_FLAGS --prefer-lowest" >> $GITHUB_ENV
+      -
+        name: Handle ignore-platform-reqs dependencies update
+        if: "contains(matrix.dependencies, 'ignore')"
+        run: echo "COMPOSER_FLAGS=$COMPOSER_FLAGS --ignore-platform-req=php" >> $GITHUB_ENV
+      -
+        name: Remove platform config to get latest dependencies for current PHP version when build is not locked
+        run: composer config platform --unset
+      -
+        name: Update dependencies from composer.json
+        if: "contains(matrix.dependencies, 'highest') || contains(matrix.dependencies, 'lowest')"
+        run: composer update ${{ env.COMPOSER_UPDATE_FLAGS }} ${{ env.COMPOSER_FLAGS }}
+      -
+        name: Install dependencies from composer.lock
+        if: "matrix.dependencies == 'locked'"
+        run: composer install ${{ env.COMPOSER_FLAGS }}
+      -
+        name: Validate composer.json
+        run: composer validate
+
+      # Symfony specific
+      -
+        name: About symfony
+        run: ./bin/console about --ansi
+      -
+        name: Check recipes
+        run: composer recipes
