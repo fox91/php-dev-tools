@@ -67,4 +67,8 @@ jobs:
         run: composer update ${{ env.COMPOSER_UPDATE_FLAGS }} ${{ env.COMPOSER_FLAGS }}
       -
         name: Validate composer.json
-        run: composer validate
+        run: composer validate --strict
+      -
+        name: Validate composer.json with dependencies
+        run: composer validate --strict --with-dependencies
+        continue-on-error: true
