@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.3 | ^8.0",
-        "brainbits/phpstan-rules": "^1.0",
+        "brainbits/phpstan-rules": "^1.0 || ^2.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "ergebnis/phpstan-rules": "^0.15.3",
         "ikvasnica/phpstan-clean-test": "^0.3.1",
