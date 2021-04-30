@@ -1,0 +1,16 @@
+# Auto-detect text files, ensure they use LF.
+* text=auto eol=lf
+
+# These files are always considered text and should use LF.
+# See core.whitespace @ http://git-scm.com/docs/git-config for whitespace flags.
+*.php text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=4 diff=php
+
+# GitHub Linguist
+# See https://github.com/github/linguist
+*.stub linguist-language=PHP
+*.neon* linguist-language=YAML
+
+# Ignore files for distribution archives.
+/.* export-ignore
+/*.dist export-ignore
+/tests export-ignore

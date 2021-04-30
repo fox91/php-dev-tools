@@ -2,6 +2,7 @@
 
 [![Latest version](https://img.shields.io/packagist/v/fox91/dev-tools.svg?colorB=007EC6)](https://packagist.org/packages/fox91/dev-tools)
 [![Downloads](https://img.shields.io/packagist/dt/fox91/dev-tools.svg?colorB=007EC6)](https://packagist.org/packages/fox91/dev-tools)
+[![Build status](https://github.com/fox91/php-dev-tools/workflows/php-ci/badge.svg?branch=main)](https://github.com/fox91/php-dev-tools/actions?query=workflow%3Aphp-ci+branch%3Amain)
 
 Compatible with PHP `7.3`, `7.4` and `8.0`.
 
@@ -10,11 +11,7 @@ Compatible with PHP `7.3`, `7.4` and `8.0`.
 - PHP Parallel Lint
 - PHP_CodeSniffer
     + `dealerdirect/phpcodesniffer-composer-installer`
-    + `pheromone/phpcs-security-audit`
-    + `sirbrillig/phpcs-import-detection`
-    + `sirbrillig/phpcs-variable-analysis`
-    + `slevomat/coding-standard`
-    + `phpcompatibility/php-compatibility`
+    + `fox91/coding-standard`
 - PHPStan
     + `brainbits/phpstan-rules`
     + `ergebnis/phpstan-rules`
@@ -42,9 +39,9 @@ Add following code to your `composer.json`:
 
 ```json
 "scripts": {
-    "cs:fix": "phpcbf",
-    "cs:test": "phpcs",
-    "lint:test": "parallel-lint -j $(nproc) --no-progress --blame --exclude vendor .",
+    "cs:fix": "phpcbf --colors",
+    "cs:test": "phpcs --colors",
+    "lint:test": "parallel-lint --no-progress --blame --exclude vendor .",
     "phpstan:test": "phpstan analyse --no-progress --ansi --memory-limit 128M",
     "psalm:test": "psalm --no-progress --stats --show-info=true --show-snippet",
     "rector:fix": "rector --ansi process --no-progress-bar",
@@ -81,33 +78,13 @@ Copy default configs to the root of your project:
 
 ```sh
 cp \
-  vendor/fox91/dev-tools/.editorconfig \
-  vendor/fox91/dev-tools/.gitattributes \
+  vendor/fox91/dev-tools/configs/.editorconfig \
+  vendor/fox91/dev-tools/configs/gitattributes.txt \
+  vendor/fox91/dev-tools/configs/.gitignore \
   vendor/fox91/dev-tools/configs/.phpcs.xml.dist \
   vendor/fox91/dev-tools/configs/phpstan.neon.dist \
   vendor/fox91/dev-tools/configs/psalm.xml.dist \
   vendor/fox91/dev-tools/configs/rector.php \
   .
-```
-
-Add this to your `.gitignore`:
-
-```sh
-### PHPCodeSniffer ###
-/.phpcs.cache
-/.phpcs.xml
-/phpcs.xml
-
-### PHPStan ###
-/.phpstan.cache
-/phpstan.neon
-
-### PHPUnit ###
-/.phpunit.cache
-/.phpunit.result.cache
-/build/
-/phpunit.xml
-
-### Psalm ###
-/psalm.xml
+mv gitattributes.txt .gitattributes
 ```
