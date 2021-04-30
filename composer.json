@@ -9,17 +9,18 @@
             "email": "andrea@falco.sh"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "^7.3 | ^8.0",
+        "php": "^7.3 || ^8.0",
         "brainbits/phpstan-rules": "^1.0 || ^2.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
         "ergebnis/phpstan-rules": "^0.15.3",
+        "fox91/coding-standard": "^0.1.0",
         "ikvasnica/phpstan-clean-test": "^0.3.1",
         "korbeil/phpstan-generic-rules": "^0.2.4",
-        "pheromone/phpcs-security-audit": "^2.0",
         "php-parallel-lint/php-console-highlighter": "^0.5.0",
         "php-parallel-lint/php-parallel-lint": "^1.2",
-        "phpcompatibility/php-compatibility": "^9.3",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12.82",
         "phpstan/phpstan-beberlei-assert": "^0.12.6",
@@ -29,9 +30,6 @@
         "phpunit/phpunit": "^9.5",
         "psalm/plugin-phpunit": "^0.15.1",
         "rector/rector": "^0.10.3",
-        "sirbrillig/phpcs-import-detection": "^1.3",
-        "sirbrillig/phpcs-variable-analysis": "^2.11",
-        "slevomat/coding-standard": "^7.0",
         "squizlabs/php_codesniffer": "^3.6",
         "vimeo/psalm": "^4.6"
     }
