@@ -83,6 +83,7 @@ cp \
   vendor/fox91/dev-tools/configs/.gitignore \
   vendor/fox91/dev-tools/configs/.phpcs.xml.dist \
   vendor/fox91/dev-tools/configs/phpstan.neon.dist \
+  vendor/fox91/dev-tools/configs/phpunit.xml.dist \
   vendor/fox91/dev-tools/configs/psalm.xml.dist \
   vendor/fox91/dev-tools/configs/rector.php \
   .
