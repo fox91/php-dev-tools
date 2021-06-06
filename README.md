@@ -1,4 +1,4 @@
-# fox91 Dev Tools
+# fox91 PHP Dev Tools
 
 [![Latest version](https://img.shields.io/packagist/v/fox91/dev-tools.svg?colorB=007EC6)](https://packagist.org/packages/fox91/dev-tools)
 [![Downloads](https://img.shields.io/packagist/dt/fox91/dev-tools.svg?colorB=007EC6)](https://packagist.org/packages/fox91/dev-tools)

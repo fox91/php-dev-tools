@@ -1,7 +1,6 @@
-; top-most EditorConfig file
+# editorconfig.org
 root = true
 
-; Unix-style newlines
 [*]
 charset = utf-8
 end_of_line = LF
