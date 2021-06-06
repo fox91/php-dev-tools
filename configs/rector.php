@@ -19,28 +19,27 @@ return static function (ContainerConfigurator $containerConfigurator): void
         __DIR__.'/rector.php',
     ], array_filter($searchPaths, 'file_exists'));
 
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_91);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_EXCEPTION);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_MOCK);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER);
+    $containerConfigurator->import(SetList::CODE_QUALITY);
+    $containerConfigurator->import(SetList::CODE_QUALITY_STRICT);
+    $containerConfigurator->import(SetList::CODING_STYLE);
+    $containerConfigurator->import(SetList::DEAD_CODE);
+    $containerConfigurator->import(SetList::NAMING);
+    $containerConfigurator->import(SetList::PHP_74);
+    $containerConfigurator->import(SetList::PRIVATIZATION);
+    $containerConfigurator->import(SetList::TYPE_DECLARATION);
+    $containerConfigurator->import(SetList::UNWRAP_COMPAT);
+
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, $paths);
     $parameters->set(Option::IMPORT_DOC_BLOCKS, false);
     $parameters->set(Option::ENABLE_CACHE, true);
     $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__.'/phpstan.neon.dist');
-    $parameters->set(Option::SETS, [
-        PHPUnitSetList::PHPUNIT_91,
-        PHPUnitSetList::PHPUNIT_CODE_QUALITY,
-        PHPUnitSetList::PHPUNIT_EXCEPTION,
-        PHPUnitSetList::PHPUNIT_MOCK,
-        PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD,
-        PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER,
-        SetList::CODE_QUALITY,
-        SetList::CODE_QUALITY_STRICT,
-        SetList::CODING_STYLE,
-        SetList::DEAD_CODE,
-        SetList::NAMING,
-        SetList::PHP_74,
-        SetList::PRIVATIZATION,
-        SetList::TYPE_DECLARATION,
-        SetList::UNWRAP_COMPAT,
-    ]);
     $parameters->set(Option::SKIP, [
         \Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector::class,
         \Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector::class,

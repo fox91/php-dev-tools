@@ -13,4 +13,5 @@
 # Ignore files for distribution archives.
 /.* export-ignore
 /*.dist export-ignore
+/rector.php export-ignore
 /tests export-ignore
