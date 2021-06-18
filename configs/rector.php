@@ -11,6 +11,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void
 {
     $searchPaths = [
+        __DIR__.'/bin',
         __DIR__.'/public',
         __DIR__.'/src',
         __DIR__.'/tests',

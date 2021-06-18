@@ -13,7 +13,10 @@
     <arg value="s"/>
 
     <file>rector.php</file>
+    <!-- <file>bin</file> -->
+    <!-- <file>public</file> -->
     <file>src</file>
+    <!-- <file>tests</file> -->
 
     <config name="ignore_warnings_on_exit" value="1"/>
     <config name="ParanoiaMode" value="1"/>
