@@ -4,5 +4,7 @@ parameters:
     ignoreErrors:
         - "#^Class [a-zA-Z0-9\\_\\\\]+ is neither abstract nor final\\.$#"
     paths:
+        # - bin
+        # - public
         - src
-        - tests
+        # - tests
