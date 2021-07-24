@@ -42,15 +42,23 @@ return static function (ContainerConfigurator $containerConfigurator): void
     $parameters->set(Option::ENABLE_CACHE, true);
     $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__.'/phpstan.neon.dist');
     $parameters->set(Option::SKIP, [
+        \Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class,
         \Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector::class,
+        \Rector\CodeQuality\Rector\If_\ShortenElseIfRector::class,
         \Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector::class,
+        \Rector\CodingStyle\Rector\ClassMethod\RemoveDoubleUnderscoreInMethodNameRector::class,
         \Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
+        \Rector\CodingStyle\Rector\FuncCall\ConsistentPregDelimiterRector::class,
+        \Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector::class,
         \Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector::class,
+        \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
         \Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector::class,
         \Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector::class,
         \Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchExprVariableRector::class,
+        \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchMethodCallReturnTypeRector::class,
         \Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector::class,
+        \Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
         \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
         \Rector\Privatization\Rector\Class_\RepeatedLiteralToClassConstantRector::class,
     ]);
