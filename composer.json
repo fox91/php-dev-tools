@@ -15,7 +15,7 @@
         "php": "^7.3 || ^8.0",
         "brainbits/phpstan-rules": "^1.0 || ^2.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-        "fox91/coding-standard": "^0.1.4",
+        "fox91/coding-standard": "^0.2.0",
         "korbeil/phpstan-generic-rules": "^0.2.4",
         "php-parallel-lint/php-console-highlighter": "^0.5.0",
         "php-parallel-lint/php-parallel-lint": "^1.2",
