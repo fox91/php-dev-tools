@@ -21,11 +21,11 @@
     </plugins>
 
     <issueHandlers>
-        <MissingConstructor>
+        <!-- <MissingConstructor>
             <errorLevel type="suppress">
                 <directory name="tests"/>
             </errorLevel>
-        </MissingConstructor>
+        </MissingConstructor> -->
 
         <MissingThrowsDocblock errorLevel="info"/>
     </issueHandlers>

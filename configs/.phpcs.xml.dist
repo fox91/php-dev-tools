@@ -21,5 +21,9 @@
     <config name="ignore_warnings_on_exit" value="1"/>
     <config name="ParanoiaMode" value="1"/>
 
+    <!-- PHPCompatibility config -->
+    <!-- <config name="testVersion" value="7.4"/> -->
+
     <rule ref="Fox91CodingStandard"/>
+    <!-- <rule ref="Fox91CodingStandardStrict"/> -->
 </ruleset>
