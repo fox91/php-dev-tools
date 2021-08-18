@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <psalm
+    cacheDirectory=".psalm.cache"
     errorLevel="1"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7,11 +8,13 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
+        <!-- <file name="rector.php" /> -->
         <!-- <directory name="bin" /> -->
         <!-- <directory name="public" /> -->
         <directory name="src" />
         <!-- <directory name="tests" /> -->
         <ignoreFiles>
+            <!-- <directory name="stubs" /> -->
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
@@ -29,4 +32,8 @@
 
         <MissingThrowsDocblock errorLevel="info"/>
     </issueHandlers>
+
+    <!-- <stubs>
+        <file name="stubs/foo.phpstub" />
+    </stubs> -->
 </psalm>

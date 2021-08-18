@@ -18,4 +18,5 @@
 /phpunit.xml
 
 ### Psalm ###
+/.psalm.cache
 /psalm.xml
