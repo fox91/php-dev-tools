@@ -8,28 +8,31 @@ Compatible with PHP `7.3`, `7.4` and `8.0`.
 
 ## Included tools
 
-- PHP Parallel Lint
-- PHP_CodeSniffer
-    + `dealerdirect/phpcodesniffer-composer-installer`
-    + `fox91/coding-standard`
-- PHPStan
-    + `brainbits/phpstan-rules`
-    + `ergebnis/phpstan-rules`
-    + `ikvasnica/phpstan-clean-test`
-    + `korbeil/phpstan-generic-rules`
-    + `phpstan/extension-installer`
-    + `phpstan/phpstan-beberlei-assert`
-    + `phpstan/phpstan-deprecation-rules`
-    + `phpstan/phpstan-phpunit`
-    + `phpstan/phpstan-strict-rules`
-- PHPUnit
-- Psalm
-    + `psalm/plugin-phpunit`
-- Rector
+- [PHP Parallel Lint](https://packagist.org/packages/php-parallel-lint/php-parallel-lint)
+- [PHP_CodeSniffer](https://packagist.org/packages/squizlabs/php_codesniffer)
+    + [`dealerdirect/phpcodesniffer-composer-installer`](https://packagist.org/packages/dealerdirect/phpcodesniffer-composer-installer)
+    + [`fox91/coding-standard`](https://packagist.org/packages/fox91/coding-standard)
+- [PHPUnit](https://packagist.org/packages/phpunit/phpunit)
+- [Psalm](https://packagist.org/packages/vimeo/psalm)
+    + [`psalm/plugin-phpunit`](https://packagist.org/packages/psalm/plugin-phpunit)
+- [Rector](https://packagist.org/packages/rector/rector)
+
+## Optional tools
+
+- [PHPStan](https://packagist.org/packages/phpstan/phpstan)
+    + [`brainbits/phpstan-rules`](https://packagist.org/packages/brainbits/phpstan-rules)
+    + [`ergebnis/phpstan-rules`](https://packagist.org/packages/ergebnis/phpstan-rules)
+    + [`ikvasnica/phpstan-clean-test`](https://packagist.org/packages/ikvasnica/phpstan-clean-test)
+    + [`korbeil/phpstan-generic-rules`](https://packagist.org/packages/korbeil/phpstan-generic-rules)
+    + [`phpstan/extension-installer`](https://packagist.org/packages/phpstan/extension-installer)
+    + [`phpstan/phpstan-beberlei-assert`](https://packagist.org/packages/phpstan/phpstan-beberlei-assert)
+    + [`phpstan/phpstan-deprecation-rules`](https://packagist.org/packages/phpstan/phpstan-deprecation-rules)
+    + [`phpstan/phpstan-phpunit`](https://packagist.org/packages/phpstan/phpstan-phpunit)
+    + [`phpstan/phpstan-strict-rules`](https://packagist.org/packages/phpstan/phpstan-strict-rules)
 
 ## Installation
 
-```bsh
+```bash
 composer require --dev fox91/dev-tools
 ```
 
@@ -55,7 +58,6 @@ Add following code to your `composer.json`:
         "@lint:test",
         "@rector:test",
         "@cs:test",
-        "@phpstan:test",
         "@psalm:test",
         "@unit:test"
     ]
@@ -76,12 +78,12 @@ Add following code to your `composer.json`:
 
 Copy default configs to the root of your project:
 
-```sh
+```bash
 cp \
   vendor/fox91/dev-tools/configs/.editorconfig \
-  vendor/fox91/dev-tools/configs/gitattributes.txt \
   vendor/fox91/dev-tools/configs/.gitignore \
   vendor/fox91/dev-tools/configs/.phpcs.xml.dist \
+  vendor/fox91/dev-tools/configs/gitattributes.txt \
   vendor/fox91/dev-tools/configs/phpstan.neon.dist \
   vendor/fox91/dev-tools/configs/phpunit.xml.dist \
   vendor/fox91/dev-tools/configs/psalm.xml.dist \

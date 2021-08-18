@@ -7,8 +7,8 @@
 
 # GitHub Linguist
 # See https://github.com/github/linguist
-*.stub linguist-language=PHP
 *.neon* linguist-language=YAML
+*.phpstub linguist-language=PHP
 
 # Ignore files for distribution archives.
 /.* export-ignore
