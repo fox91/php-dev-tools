@@ -38,6 +38,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
 
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, $paths);
+    $parameters->set(Option::CACHE_DIR, __DIR__.'/.rector.cache');
     $parameters->set(Option::IMPORT_DOC_BLOCKS, false);
     $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__.'/phpstan.neon.dist');
     $parameters->set(Option::SKIP, [
