@@ -20,3 +20,6 @@
 ### Psalm ###
 /.psalm.cache
 /psalm.xml
+
+### Rector ###
+/.rector.cache
