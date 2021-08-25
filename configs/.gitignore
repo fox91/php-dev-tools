@@ -10,6 +10,9 @@
 /.phpcs.xml
 /phpcs.xml
 
+### phpDoc ###
+/phpdoc.xml
+
 ### PHPStan ###
 /phpstan.neon
 
