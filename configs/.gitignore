@@ -2,24 +2,19 @@
 /vendor/
 # composer.lock
 
+### Generic ###
+/build/
+
 ### PHPCodeSniffer ###
 /.phpcs.cache
 /.phpcs.xml
 /phpcs.xml
 
 ### PHPStan ###
-/.phpstan.cache
 /phpstan.neon
 
 ### PHPUnit ###
-/.phpunit.cache
-/.phpunit.result.cache
-/build/
 /phpunit.xml
 
 ### Psalm ###
-/.psalm.cache
 /psalm.xml
-
-### Rector ###
-/.rector.cache
