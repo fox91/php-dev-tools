@@ -84,10 +84,18 @@ cp \
   vendor/fox91/dev-tools/configs/.gitignore \
   vendor/fox91/dev-tools/configs/.phpcs.xml.dist \
   vendor/fox91/dev-tools/configs/gitattributes.txt \
+  vendor/fox91/dev-tools/configs/phpdoc.dist.xml \
   vendor/fox91/dev-tools/configs/phpstan.neon.dist \
   vendor/fox91/dev-tools/configs/phpunit.xml.dist \
   vendor/fox91/dev-tools/configs/psalm.xml.dist \
   vendor/fox91/dev-tools/configs/rector.php \
   .
 mv gitattributes.txt .gitattributes
+```
+
+## Usage
+
+```bash
+composer test
+docker run --rm -v "$(pwd)":/data:rw phpdoc/phpdoc run
 ```
