@@ -42,6 +42,7 @@ Add following code to your `composer.json`:
 
 ```json
 "scripts": {
+    "cs-e:test": "phpcs --colors -n",
     "cs:fix": "phpcbf --colors",
     "cs:test": "phpcs --colors",
     "lint:test": "parallel-lint --no-progress --blame --exclude vendor .",
@@ -63,6 +64,7 @@ Add following code to your `composer.json`:
     ]
 },
 "scripts-descriptions": {
+    "cs-e:test": "Run PHP_CodeSniffer tests, show only errors",
     "cs:fix": "Run PHP_CodeSniffer fixes",
     "cs:test": "Run PHP_CodeSniffer tests",
     "fix": "Run all fixes!",
