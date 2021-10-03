@@ -50,6 +50,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
         \Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
         \Rector\CodingStyle\Rector\FuncCall\ConsistentPregDelimiterRector::class,
         \Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector::class,
+        \Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector::class,
         \Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector::class,
         \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
         \Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector::class,
