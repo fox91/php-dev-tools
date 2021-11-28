@@ -28,7 +28,6 @@ return static function (ContainerConfigurator $containerConfigurator): void
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER);
     $containerConfigurator->import(SetList::CODE_QUALITY);
     $containerConfigurator->import(SetList::CODE_QUALITY_STRICT);
-    $containerConfigurator->import(SetList::CODING_STYLE);
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::NAMING);
     $containerConfigurator->import(SetList::PHP_74);
@@ -45,13 +44,6 @@ return static function (ContainerConfigurator $containerConfigurator): void
         \Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class,
         \Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector::class,
         \Rector\CodeQuality\Rector\If_\ShortenElseIfRector::class,
-        \Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector::class,
-        \Rector\CodingStyle\Rector\ClassMethod\RemoveDoubleUnderscoreInMethodNameRector::class,
-        \Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
-        \Rector\CodingStyle\Rector\FuncCall\ConsistentPregDelimiterRector::class,
-        \Rector\CodingStyle\Rector\PostInc\PostIncDecToPreIncDecRector::class,
-        \Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector::class,
-        \Rector\CodingStyle\Rector\Use_\RemoveUnusedAliasRector::class,
         \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
         \Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector::class,
         \Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector::class,
