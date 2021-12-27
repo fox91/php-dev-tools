@@ -27,7 +27,6 @@ return static function (ContainerConfigurator $containerConfigurator): void
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER);
     $containerConfigurator->import(SetList::CODE_QUALITY);
-    $containerConfigurator->import(SetList::CODE_QUALITY_STRICT);
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::NAMING);
     $containerConfigurator->import(SetList::PHP_74);
