@@ -72,3 +72,9 @@ jobs:
         name: Validate composer.json with dependencies
         run: composer validate --strict --with-dependencies
         continue-on-error: true
+      -
+        name: PHP lint
+        run: composer lint:test
+      -
+        name: PHP codesniffer
+        run: composer cs:test

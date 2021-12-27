@@ -1,4 +1,8 @@
 ### Composer ###
 /vendor/
 composer.lock
-composer.phar
+
+### PHPCodeSniffer ###
+/.phpcs.cache
+/.phpcs.xml
+/phpcs.xml
