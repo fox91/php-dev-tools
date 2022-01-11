@@ -22,13 +22,15 @@ Compatible with PHP `7.4`, `8.0` and `8.1`.
 - [PHPStan](https://packagist.org/packages/phpstan/phpstan)
     + [`brainbits/phpstan-rules`](https://packagist.org/packages/brainbits/phpstan-rules)
     + [`ergebnis/phpstan-rules`](https://packagist.org/packages/ergebnis/phpstan-rules)
-    + [`ikvasnica/phpstan-clean-test`](https://packagist.org/packages/ikvasnica/phpstan-clean-test)
     + [`korbeil/phpstan-generic-rules`](https://packagist.org/packages/korbeil/phpstan-generic-rules)
     + [`phpstan/extension-installer`](https://packagist.org/packages/phpstan/extension-installer)
     + [`phpstan/phpstan-beberlei-assert`](https://packagist.org/packages/phpstan/phpstan-beberlei-assert)
     + [`phpstan/phpstan-deprecation-rules`](https://packagist.org/packages/phpstan/phpstan-deprecation-rules)
     + [`phpstan/phpstan-phpunit`](https://packagist.org/packages/phpstan/phpstan-phpunit)
     + [`phpstan/phpstan-strict-rules`](https://packagist.org/packages/phpstan/phpstan-strict-rules)
+    + [`thecodingmachine/phpstan-safe-rule`](https://packagist.org/packages/thecodingmachine/phpstan-safe-rule)
+    + [`thecodingmachine/phpstan-strict-rules`](https://packagist.org/packages/thecodingmachine/phpstan-strict-rules)
+- [Safe PHP](https://packagist.org/packages/thecodingmachine/safe)
 
 ## Installation
 
