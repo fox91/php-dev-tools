@@ -35,6 +35,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
     $containerConfigurator->import(SetList::UNWRAP_COMPAT);
 
     $parameters = $containerConfigurator->parameters();
+    $parameters->set(Option::PARALLEL, true);
     $parameters->set(Option::PATHS, $paths);
     $parameters->set(Option::CACHE_DIR, __DIR__.'/build/cache/rector');
     $parameters->set(Option::IMPORT_DOC_BLOCKS, false);
