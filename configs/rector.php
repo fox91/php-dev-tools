@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
+use Rector\Config\RectorConfig;
 use Rector\Core\Configuration\Option;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 // https://github.com/rectorphp/rector/blob/main/docs/rector_rules_overview.md
 
-return static function (ContainerConfigurator $containerConfigurator): void
+return static function (RectorConfig $rectorConfig): void
 {
     $searchPaths = [
         __DIR__.'/bin',
@@ -20,27 +20,25 @@ return static function (ContainerConfigurator $containerConfigurator): void
         __DIR__.'/rector.php',
     ], array_filter($searchPaths, 'file_exists'));
 
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_91);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_EXCEPTION);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_MOCK);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER);
-    $containerConfigurator->import(SetList::CODE_QUALITY);
-    $containerConfigurator->import(SetList::DEAD_CODE);
-    $containerConfigurator->import(SetList::NAMING);
-    $containerConfigurator->import(SetList::PHP_74);
-    $containerConfigurator->import(SetList::PRIVATIZATION);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION);
-    $containerConfigurator->import(SetList::UNWRAP_COMPAT);
-
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PARALLEL, true);
-    $parameters->set(Option::PATHS, $paths);
-    $parameters->set(Option::CACHE_DIR, __DIR__.'/build/cache/rector');
-    $parameters->set(Option::IMPORT_DOC_BLOCKS, false);
-    $parameters->set(Option::PHPSTAN_FOR_RECTOR_PATH, __DIR__.'/phpstan.neon.dist');
-    $parameters->set(Option::SKIP, [
+    $rectorConfig->sets([
+        PHPUnitSetList::PHPUNIT_91,
+        PHPUnitSetList::PHPUNIT_CODE_QUALITY,
+        PHPUnitSetList::PHPUNIT_EXCEPTION,
+        PHPUnitSetList::PHPUNIT_MOCK,
+        PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD,
+        PHPUnitSetList::PHPUNIT_YIELD_DATA_PROVIDER,
+        SetList::CODE_QUALITY,
+        SetList::DEAD_CODE,
+        SetList::NAMING,
+        SetList::PHP_74,
+        SetList::PRIVATIZATION,
+        SetList::TYPE_DECLARATION,
+        SetList::UNWRAP_COMPAT,
+    ]);
+    $rectorConfig->parallel();
+    $rectorConfig->paths($paths);
+    $rectorConfig->phpstanConfig(__DIR__.'/phpstan.neon.dist');
+    $rectorConfig->skip([
         \Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class,
         \Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector::class,
         \Rector\CodeQuality\Rector\If_\ShortenElseIfRector::class,
@@ -55,4 +53,7 @@ return static function (ContainerConfigurator $containerConfigurator): void
         \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
         \Rector\Privatization\Rector\Class_\RepeatedLiteralToClassConstantRector::class,
     ]);
+
+    $parameters = $rectorConfig->parameters();
+    $parameters->set(Option::CACHE_DIR, __DIR__.'/build/cache/rector');
 };
