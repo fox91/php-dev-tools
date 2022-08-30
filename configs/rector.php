@@ -32,7 +32,6 @@ return static function (RectorConfig $rectorConfig): void
         SetList::PHP_74,
         SetList::PRIVATIZATION,
         SetList::TYPE_DECLARATION,
-        SetList::UNWRAP_COMPAT,
     ]);
     $rectorConfig->parallel();
     $rectorConfig->paths($paths);
