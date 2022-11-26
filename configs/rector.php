@@ -37,7 +37,6 @@ return static function (RectorConfig $rectorConfig): void
     $rectorConfig->paths($paths);
     $rectorConfig->phpstanConfig(__DIR__.'/phpstan.neon.dist');
     $rectorConfig->skip([
-        \Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class,
         \Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector::class,
         \Rector\CodeQuality\Rector\If_\ShortenElseIfRector::class,
         \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
