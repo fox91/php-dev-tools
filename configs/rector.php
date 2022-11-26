@@ -48,7 +48,6 @@ return static function (RectorConfig $rectorConfig): void
         \Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector::class,
         \Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
         \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
-        \Rector\Privatization\Rector\Class_\RepeatedLiteralToClassConstantRector::class,
     ]);
 
     $parameters = $rectorConfig->parameters();
