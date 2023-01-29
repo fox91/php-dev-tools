@@ -4,6 +4,7 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\Core\Configuration\Option;
 use Rector\PHPUnit\Set\PHPUnitSetList;
+use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 
 // https://github.com/rectorphp/rector/blob/main/docs/rector_rules_overview.md
@@ -21,6 +22,7 @@ return static function (RectorConfig $rectorConfig): void
     ], array_filter($searchPaths, 'file_exists'));
 
     $rectorConfig->sets([
+        LevelSetList::UP_TO_PHP_74,
         PHPUnitSetList::PHPUNIT_91,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
         PHPUnitSetList::PHPUNIT_EXCEPTION,
@@ -29,7 +31,6 @@ return static function (RectorConfig $rectorConfig): void
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
         SetList::NAMING,
-        SetList::PHP_74,
         SetList::PRIVATIZATION,
         SetList::TYPE_DECLARATION,
     ]);
