@@ -17,9 +17,7 @@ return static function (RectorConfig $rectorConfig): void
         __DIR__.'/src',
         __DIR__.'/tests',
     ];
-    $paths = array_merge([
-        __DIR__.'/rector.php',
-    ], array_filter($searchPaths, 'file_exists'));
+    $paths = [__DIR__.'/rector.php', ...array_filter($searchPaths, 'file_exists')];
 
     $rectorConfig->sets([
         LevelSetList::UP_TO_PHP_74,
