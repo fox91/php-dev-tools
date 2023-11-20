@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\Config\RectorConfig;
-use Rector\Core\Configuration\Option;
 use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
@@ -46,6 +46,6 @@ return static function (RectorConfig $rectorConfig): void
         \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
     ]);
 
-    $parameters = $rectorConfig->parameters();
-    $parameters->set(Option::CACHE_DIR, __DIR__.'/build/cache/rector');
+    $rectorConfig->cacheClass(FileCacheStorage::class);
+    $rectorConfig->cacheDirectory(__DIR__.'/build/cache/rector');
 };
