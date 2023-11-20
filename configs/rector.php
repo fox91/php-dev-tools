@@ -43,7 +43,6 @@ return static function (RectorConfig $rectorConfig): void
         \Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchExprVariableRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchMethodCallReturnTypeRector::class,
-        \Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector::class,
         \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
     ]);
 
