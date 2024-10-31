@@ -22,7 +22,6 @@ return static function (RectorConfig $rectorConfig): void
     $rectorConfig->sets([
         LevelSetList::UP_TO_PHP_74,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
-        PHPUnitSetList::PHPUNIT_SPECIFIC_METHOD,
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
         SetList::NAMING,
@@ -41,7 +40,6 @@ return static function (RectorConfig $rectorConfig): void
         \Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchExprVariableRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchMethodCallReturnTypeRector::class,
-        \Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector::class,
     ]);
 
     $rectorConfig->cacheClass(FileCacheStorage::class);
