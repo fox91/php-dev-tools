@@ -16,12 +16,12 @@
         "fox91/coding-standard": "^0.3.2",
         "php-parallel-lint/php-console-highlighter": "^1.0",
         "php-parallel-lint/php-parallel-lint": "^1.4",
-        "phpunit/phpunit": "^9.6",
-        "psalm/plugin-phpunit": "^0.19.1",
+        "phpunit/phpunit": "^10.5",
+        "psalm/plugin-phpunit": "^0.19.2",
         "rector/rector": "^2.0",
         "roave/security-advisories": "dev-latest",
         "squizlabs/php_codesniffer": "^3.11",
-        "vimeo/psalm": "^5.26 || ^6.0"
+        "vimeo/psalm": "^6.0"
     },
     "config": {
         "allow-plugins": {
