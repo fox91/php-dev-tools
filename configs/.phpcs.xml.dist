@@ -22,7 +22,7 @@
     <config name="ParanoiaMode" value="1"/>
 
     <!-- PHPCompatibility config -->
-    <config name="testVersion" value="7.4-"/>
+    <config name="testVersion" value="8.1-"/>
 
     <rule ref="Fox91CodingStandard"/>
     <!-- <rule ref="Fox91CodingStandardStrict"/> -->
