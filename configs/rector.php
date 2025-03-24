@@ -20,7 +20,7 @@ return static function (RectorConfig $rectorConfig): void
     $paths = [__DIR__.'/rector.php', ...array_filter($searchPaths, 'file_exists')];
 
     $rectorConfig->sets([
-        LevelSetList::UP_TO_PHP_74,
+        LevelSetList::UP_TO_PHP_81,
         PHPUnitSetList::PHPUNIT_CODE_QUALITY,
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
@@ -36,6 +36,7 @@ return static function (RectorConfig $rectorConfig): void
         \Rector\CodeQuality\Rector\If_\ShortenElseIfRector::class,
         \Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector::class,
         \Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector::class,
+        \Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector::class,
         \Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector::class,
         \Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector::class,
         \Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchExprVariableRector::class,
