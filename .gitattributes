@@ -13,6 +13,7 @@
 # Ignore files for distribution archives.
 /*.dist* export-ignore
 /.* export-ignore
+/CLAUDE.md export-ignore
 /rector.php export-ignore
 /stubs export-ignore
 /tests export-ignore
